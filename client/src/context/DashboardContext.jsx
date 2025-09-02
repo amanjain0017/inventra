@@ -65,6 +65,8 @@ export const DashboardProvider = ({ children }) => {
   const [salesData, setSalesData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [chartPeriod, setChartPeriod] = useState("daily");
+  const [chartNumPeriods, setChartNumPeriods] = useState(30);
 
   // Re-configure axios to use the apiClient from AuthContext
   const apiClient = axios.create({
@@ -102,6 +104,24 @@ export const DashboardProvider = ({ children }) => {
     },
     []
   );
+
+  // Function to update chart period, and set the correct number of periods
+  const updateChartPeriod = useCallback((newPeriod) => {
+    setChartPeriod(newPeriod);
+    switch (newPeriod) {
+      case "daily":
+        setChartNumPeriods(30);
+        break;
+      case "weekly":
+        setChartNumPeriods(12);
+        break;
+      case "yearly":
+        setChartNumPeriods(5);
+        break;
+      default:
+        setChartNumPeriods(12);
+    }
+  }, []);
 
   // Data Fetching and State Management with caching
   const fetchAllDashboardData = useCallback(
@@ -266,6 +286,7 @@ export const DashboardProvider = ({ children }) => {
     salesData,
     isLoading,
     error,
+    updateChartPeriod,
     refetchTopProducts,
     refetchSalesData,
     invalidateCache,

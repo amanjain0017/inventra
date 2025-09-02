@@ -1,3 +1,5 @@
+// src/components/SalesPurchaseChart.jsx
+
 import { useState, useEffect, useRef } from "react";
 import { useDashboard } from "../../context/DashboardContext";
 import {
@@ -15,42 +17,15 @@ import timeframeIcon from "../../assets/icons/Quantity.png";
 import "./SalesPurchaseChart.css";
 
 const SalesPurchaseChart = () => {
-  const { salesData, isLoading, error, refetchSalesData } = useDashboard();
-  const [period, setPeriod] = useState("daily");
-  const [numPeriods, setNumPeriods] = useState(12);
-  const prevPeriodRef = useRef();
-  const prevNumPeriodsRef = useRef();
+  // --- MODIFIED: Get state and setter from context ---
+  const { salesData, isLoading, error, chartPeriod, updateChartPeriod } =
+    useDashboard();
 
-  // Adjust default periods when switching
-  useEffect(() => {
-    switch (period) {
-      case "daily":
-        setNumPeriods(30);
-        break;
-      case "weekly":
-        setNumPeriods(12);
-        break;
-      case "yearly":
-        setNumPeriods(5);
-        break;
-      default:
-        setNumPeriods(12);
-    }
-  }, [period]);
-
-  // Refetch when period changes
-  useEffect(() => {
-    if (
-      period &&
-      numPeriods &&
-      (prevPeriodRef.current !== period ||
-        prevNumPeriodsRef.current !== numPeriods)
-    ) {
-      refetchSalesData(period, numPeriods);
-      prevPeriodRef.current = period;
-      prevNumPeriodsRef.current = numPeriods;
-    }
-  }, [period, numPeriods]);
+  // --- REMOVED: Local state and useEffect hooks that were causing re-renders ---
+  // The logic for period and numPeriods is now handled in the context.
+  // const [period, setPeriod] = useState("daily");
+  // const [numPeriods, setNumPeriods] = useState(12);
+  // useEffect() hooks are no longer needed here.
 
   const formatCurrency = (amount) =>
     new Intl.NumberFormat("en-IN", {
@@ -76,8 +51,8 @@ const SalesPurchaseChart = () => {
           <div className="custom-select-wrapper">
             <img src={timeframeIcon} alt="icon" className="select-icon" />
             <select
-              value={period}
-              onChange={(e) => setPeriod(e.target.value)}
+              value={chartPeriod} // Use state from context
+              onChange={(e) => updateChartPeriod(e.target.value)} // Use setter from context
               className="chart-select"
             >
               <option value="daily">Daily</option>
