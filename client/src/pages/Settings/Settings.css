@@ -1,0 +1,197 @@
+.settings-page {
+  padding: 12px;
+  background-color: #424457;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.settings-container {
+  width: 100%;
+  position: relative;
+  border: 3px solid #9f9f9f;
+  background-color: white;
+  padding: 2px 10px;
+  height: fit-content;
+}
+
+.settings-header {
+  border-bottom: 2px solid #9f9f9f;
+  padding: 9.5px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.settings-tabs {
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 15px;
+  border-bottom: 2px solid black;
+}
+
+.settings-form-container {
+  background-color: white;
+  padding: 12px 45px;
+  color: #5e5e5e;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.settings-page .form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5e5e5e;
+}
+
+.settings-page .form-input {
+  padding: 8px 15px;
+  border: 1px solid #3e3e3e;
+  border-radius: 9px;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 60%;
+}
+
+.settings-page .form-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.settings-page .form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.save-button {
+  background-color: #242531;
+  color: #ffffff;
+  border: none;
+  padding: 10px 4rem;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  background-color: #121319;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.logout-button {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #ffffff;
+  border: none;
+  padding: 9px 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+}
+
+/* Loading state */
+.save-button:disabled {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  box-shadow: none;
+}
+
+.mobile-log {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .settings-form-container {
+    padding: 20px;
+  }
+
+  .settings-page .form-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-page {
+    padding: 10px;
+  }
+
+  .settings-form-container {
+    padding: 15px;
+  }
+
+  .save-button,
+  .logout-button {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-header {
+    border: none;
+    padding: 10px 13px;
+  }
+  .page-title {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+}

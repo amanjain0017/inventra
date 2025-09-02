@@ -1,0 +1,67 @@
+/* app.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #424457;
+  overflow: hidden;
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #424457;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+.main-content::-webkit-scrollbar {
+  width: 4px; /* thin scrollbar */
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: #242531;
+  border-radius: 10px;
+}
+
+.main-content {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #242531 transparent; /* Firefox */
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  body {
+    overflow: visible;
+  }
+
+  .dashboard-layout {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    flex: 1;
+
+    padding-bottom: 70px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

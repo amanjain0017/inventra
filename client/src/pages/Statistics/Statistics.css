@@ -1,0 +1,173 @@
+.statistics-page {
+  padding: 24px;
+  background-color: #424457;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.statistics-header {
+  border-bottom: 2px solid #9f9f9f;
+  padding: 15px 18px;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Statistics Content */
+.statistics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1; /* fill remaining height below header */
+}
+
+/* Top Metrics Row */
+.top-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.metric-card {
+  border-radius: 16px;
+  padding: 25px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card.total-revenue {
+  background: #fad85d;
+}
+
+.metric-card.products-sold {
+  background: #0bf4c8;
+}
+
+.metric-card.products-stock {
+  background: #f2a0ff;
+}
+
+.metric-card-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.statistics-page .metric-icon {
+  color: #607d8b;
+  font-size: 13px;
+  width: auto;
+  height: auto;
+}
+
+.metric-value {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.statistics-page .metric-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: black;
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  flex: 1;
+  min-height: 0;
+}
+
+.page-sections {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+/* drag and drop features */
+.draggable-section {
+  background: white;
+  border-radius: 12px;
+  padding: 26px 16px;
+  cursor: grab;
+}
+
+.draggable-section:active {
+  cursor: grabbing;
+  transform: scale(1.02);
+}
+
+.draggable-section.drag-over {
+  cursor: grabbing;
+}
+
+.top-metrics .draggable-section {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.top-metrics .draggable-section:active {
+  transform: scale(1.03);
+}
+
+.mobile-logo {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .statistics-page {
+    padding: 15px;
+  }
+
+  .statistics-header {
+    padding: 12px 18px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .top-metrics {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .metric-card {
+    padding: 20px;
+  }
+
+  .metric-value {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics-header {
+    border: none;
+    padding: 10px 13px;
+  }
+  .page-title {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+}

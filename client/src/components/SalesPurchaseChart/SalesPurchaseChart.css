@@ -1,0 +1,153 @@
+/* Sales & Purchase Chart Component Styles */
+.chart-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1d29;
+  margin: 0;
+}
+
+.chart-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.period-selector {
+  display: flex;
+  gap: 12px;
+  background-color: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.period-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: #6b7280;
+  user-select: none;
+}
+
+.period-option:hover {
+  background-color: #e5e7eb;
+}
+
+/* Hide native radio */
+.period-option input[type="radio"] {
+  display: none;
+}
+
+/* Dropdown selector */
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.chart-select {
+  width: 100%;
+  padding: 8px 35px 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.chart-select:hover {
+  border-color: #9ca3af;
+}
+
+.chart-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.select-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.recharts-surface {
+  padding: 24px;
+}
+
+/* Chart Loading and Error States */
+.chart-loading,
+.chart-error,
+.chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.chart-error {
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.chart-empty {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .period-selector {
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .period-option {
+    padding: 8px 16px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .chart-summary {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .summary-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

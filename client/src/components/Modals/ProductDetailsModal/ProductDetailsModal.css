@@ -1,0 +1,88 @@
+/* Modal Container */
+.product-details-modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Modal Content */
+.modal-content {
+  padding: 8px 24px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.detail-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.detail-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 16px;
+  }
+
+  .product-details-modal {
+    max-width: 100%;
+  }
+
+  .modal-header {
+    padding: 5px 20px;
+  }
+
+  .detail-value {
+    font-weight: 500;
+  }
+}

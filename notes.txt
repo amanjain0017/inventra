@@ -1,0 +1,20 @@
+Doubts:
+
+- invoice billed to details
+- cron jobs when the app is asleep
+- do we need to manage suppliers for our products and customers for our orders
+
+- MESSAGE ALL THE DOUBTS IN THE CHAT
+
+- Metrics present in the app
+        - Home 
+                    - Sales Overview (Sales, Revenue, Profit, Cost).
+                    - Purchase Overview (Purchases, Cost, Cancel, Return).
+                    - Inventory Summary (Quantity in hand, To be received).
+                    - Product Summary (Suppliers, Categories).
+
+        - Product
+        - invoice
+        - statistics
+
+

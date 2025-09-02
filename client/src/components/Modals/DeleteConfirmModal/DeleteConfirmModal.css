@@ -1,0 +1,71 @@
+.delete-confirm-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.delete-modal-content {
+  text-align: center;
+}
+
+.delete-message {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.delete-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.cancel-btn {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.cancel-btn:hover {
+  background: #e5e7eb;
+}
+
+.confirm-btn {
+  background: #1f2937;
+  border: 1px solid #1f2937;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #111827;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .delete-confirm-modal {
+    padding: 20px;
+  }
+
+  .delete-modal-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .confirm-btn {
+    width: 100%;
+  }
+}

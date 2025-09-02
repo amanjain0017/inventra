@@ -1,0 +1,271 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Container */
+.invoice-details-modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Modal Header */
+.invoice-modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafc;
+  color: black;
+  position: relative;
+}
+
+.invoice-modal-header h2 {
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  z-index: 1000;
+}
+
+.action-btn {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Modal Content */
+.invoice-details-modal .modal-content {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+}
+
+.modal-content .footnote {
+  font-size: 9px;
+  color: #515151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+/* Invoice Info Section */
+
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+}
+.company-info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.customer-details {
+  color: #5e6470;
+}
+
+.invoice-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 8px;
+}
+
+.invoice-details-modal .detail-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-row .label {
+  font-size: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+.detail-row .value {
+  font-size: 10px;
+  color: #48505e;
+  font-weight: 600;
+}
+
+/* Products Section */
+.products-section {
+  flex: 1;
+}
+
+.invoice-details-modal .products-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d7dae0;
+}
+
+.invoice-details-modal .products-table th {
+  background: white;
+  padding: 10px;
+  text-align: left;
+  color: black;
+  border: none;
+  border-bottom: 1px solid #d7dae0;
+  font-size: 12px;
+}
+
+.invoice-details-modal .products-table td {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #d7dae0;
+  color: #515151;
+  text-align: left;
+  font-size: 10px;
+}
+
+.invoice-details-modal .products-table tr:hover {
+  background-color: #f9fafc;
+}
+
+.product-name {
+  font-weight: 500;
+}
+
+.product-qty {
+  text-align: center;
+  font-weight: 500;
+}
+
+.product-price {
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Totals as Table Rows */
+.total-row-table {
+  border: none;
+}
+
+.final-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+  padding: 5px;
+}
+
+.final-value {
+  font-size: 12px;
+  color: #1f2937;
+  font-weight: 600;
+  text-align: right;
+  padding: 5px;
+  border-bottom: 1px solid #d7dae0;
+}
+
+.final-total-table {
+  border-top: 1px solid #d7dae0;
+  background-color: #f9fafc;
+}
+
+.td.final-label {
+  font-weight: 600;
+}
+
+.invoice-details-modal .products-table td.total-label-table {
+  padding: 2px 10px;
+  border: none;
+  font-weight: 600;
+}
+/* Footer */
+.invoice-footer {
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafc;
+  padding: 24px;
+  gap: 24px;
+}
+
+.company-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5e6470;
+  font-size: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-header h1 {
+    font-size: 24px;
+  }
+
+  .invoice-details-modal .modal-content {
+    padding: 8px;
+  }
+
+  .invoice-info-section {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .invoice-meta {
+    text-align: left;
+  }
+
+  .products-table th,
+  .products-table td {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .invoice-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .total-row {
+    min-width: 200px;
+  }
+}
