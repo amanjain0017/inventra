@@ -306,7 +306,9 @@ const Home = () => {
             {leftColumn.map((card, index) => (
               <div
                 key={card.id}
-                className="draggable-section"
+                className={`draggable-section ${
+                  card.component === "salesChart" ? "salesChart" : ""
+                }`}
                 draggable
                 onDragStart={(e) => handleDragStart(e, index, "left")}
                 onDragOver={handleDragOver}
