@@ -253,6 +253,12 @@ export const DashboardProvider = ({ children }) => {
     }
   }, [token, fetchAllDashboardData]);
 
+  useEffect(() => {
+    if (chartPeriod && chartNumPeriods) {
+      refetchSalesData(chartPeriod, chartNumPeriods);
+    }
+  }, [chartPeriod, chartNumPeriods, refetchSalesData]);
+
   // Function to refresh dashboard data after product interactions
   const refreshDashboardAfterProductChange = useCallback(async () => {
     try {
