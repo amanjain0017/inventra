@@ -3,7 +3,7 @@
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 10000;
   min-width: 300px;
   max-width: 500px;
   border-radius: 8px;
